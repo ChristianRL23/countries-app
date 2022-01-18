@@ -1,3 +1,5 @@
+@import './../../shared';
+
 .options-bar {
   display: flex;
   justify-content: space-between;
@@ -10,13 +12,35 @@
     height: 5rem;
     width: 30%;
     box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    @include changeThemeTransition(background-color);
+
+    &--dark {
+      @extend .options-bar__search;
+      background-color: var(--dark-element);
+    }
+
+    &--light {
+      @extend .options-bar__search;
+      background-color: var(--light-background);
+    }
   }
 }
 
 .search {
   &__icon {
     width: 2.5rem;
-    filter: invert(50%);
+    @include changeThemeTransition(filter);
+
+    &--dark {
+      @extend .search__icon;
+      filter: invert(100%);
+    }
+
+    &--light {
+      @extend .search__icon;
+      filter: invert(30%);
+    }
   }
 
   &__input {
@@ -24,6 +48,21 @@
     background-color: transparent;
     font-size: 1.5rem;
     width: 100%;
+    @include changeThemeTransition(color);
+
+    &--dark {
+      @extend .search__input;
+      &::placeholder {
+        color: var(--dark-text);
+      }
+    }
+
+    &--light {
+      @extend .search__input;
+      &::placeholder {
+        color: var(--light-text);
+      }
+    }
 
     &:focus {
       outline: none;

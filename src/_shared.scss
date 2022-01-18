@@ -1,3 +1,7 @@
 @mixin containerPadding {
   padding: 0 6rem;
 }
+
+@mixin changeThemeTransition($property) {
+  transition: $property 0.4s ease-out;
+}
