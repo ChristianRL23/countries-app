@@ -31,6 +31,7 @@ const Main = () => {
       );
       if (!repeatedRandomNumber) {
         countriesIndexesFetched.push(randomNumber);
+        return;
       } else {
         generateNewNumberAndVerifyIt();
       }
