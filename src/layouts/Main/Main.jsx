@@ -3,7 +3,7 @@ import './Main.scss';
 
 const Main = () => {
   return (
-    <main>
+    <main className="main">
       <OptionsBar />
     </main>
   );

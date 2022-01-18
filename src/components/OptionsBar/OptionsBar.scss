@@ -1,4 +1,7 @@
 .options-bar {
+  display: flex;
+  justify-content: space-between;
+
   &__search {
     padding: 1rem 2rem;
 

@@ -1,3 +1,4 @@
+import Filter from '../Filter/Filter';
 import './OptionsBar.scss';
 import searchIcon from './search-outline.svg';
 
@@ -11,7 +12,7 @@ const OptionsBar = () => {
           placeholder="Search for a country..."
         />
       </div>
-      <select></select>
+      <Filter />
     </form>
   );
 };

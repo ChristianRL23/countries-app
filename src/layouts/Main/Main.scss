@@ -1,0 +1,6 @@
+@import './../../shared';
+
+.main {
+  margin-top: 4.5rem;
+  @include containerPadding;
+}
