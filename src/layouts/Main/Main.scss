@@ -1,6 +1,18 @@
 @import './../../shared';
 
 .main {
-  margin-top: 4.5rem;
   @include containerPadding;
+  padding: 4rem;
+  height: 100vh;
+  @include changeThemeTransition(background-color);
+
+  &--dark {
+    @extend .main;
+    background-color: var(--dark-background);
+  }
+
+  &--light {
+    @extend .main;
+    background-color: var(--light-background);
+  }
 }
