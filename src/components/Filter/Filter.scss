@@ -1,3 +1,5 @@
+@import './../../shared';
+
 .filter {
   display: flex;
   flex-direction: column;
@@ -11,13 +13,46 @@
     gap: 1rem;
     cursor: pointer;
     border-radius: 5px;
+    @include changeThemeTransition(background-color);
+
+    &--dark {
+      @extend .filter__button;
+      background-color: var(--dark-element);
+    }
+
+    &--light {
+      @extend .filter__button;
+      background-color: var(--light-element);
+    }
 
     &__text {
       font-size: 1.5rem;
+      @include changeThemeTransition(color);
+
+      &--dark {
+        @extend .filter__button__text;
+        color: var(--dark-text);
+      }
+
+      &--light {
+        @extend .filter__button__text;
+        color: var(--light-text);
+      }
     }
 
     &__icon {
       width: 2rem;
+      @include changeThemeTransition(filter);
+
+      &--dark {
+        @extend .filter__button__icon;
+        filter: invert(100%);
+      }
+
+      &--light {
+        @extend .filter__button__icon;
+        filter: invert(30%);
+      }
     }
   }
 
@@ -25,6 +60,20 @@
     padding: 1rem 2rem;
     font-size: 1.6rem;
     border-radius: 5px;
+    @include changeThemeTransition(background-color);
+    @include changeThemeTransition(color);
+
+    &--dark {
+      @extend .filter__options;
+      background-color: var(--dark-element);
+      color: var(--dark-text);
+    }
+
+    &--light {
+      @extend .filter__options;
+      background-color: var(--light-element);
+      color: var(--light-text);
+    }
 
     p {
       cursor: pointer;
