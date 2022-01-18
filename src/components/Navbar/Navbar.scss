@@ -18,8 +18,9 @@
     display: flex;
     height: 100%;
     align-items: center;
-    gap: 1rem;
     cursor: pointer;
+    justify-content: space-between;
+    width: 13rem;
   }
 
   .theme-changer {
