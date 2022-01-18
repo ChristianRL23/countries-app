@@ -5,9 +5,21 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   height: 8rem;
   box-shadow: 0px 1px 25px -15px rgba(0, 0, 0, 0.7);
+  transition: all 0.4s ease-out;
+
+  &--dark {
+    @extend .navbar;
+    background-color: hsl(209, 23%, 22%);
+    color: hsl(0, 0%, 100%);
+  }
+
+  &--light {
+    @extend .navbar;
+    background-color: hsl(0, 0%, 100%);
+    color: hsl(200, 15%, 8%);
+  }
 
   &__logo {
     font-weight: 800;
@@ -27,6 +39,16 @@
     &__icon {
       width: 2.3rem;
       height: 2.3rem;
+
+      &--dark {
+        @extend .theme-changer__icon;
+        filter: invert(100%);
+      }
+
+      &--light {
+        @extend .theme-changer__icon;
+        filter: invert(0%);
+      }
     }
     &__text {
       font-size: 2rem;

@@ -6,17 +6,17 @@ import ThemeContext from './../../context/themeContext';
 
 const Navbar = () => {
   const themeCtx = useContext(ThemeContext);
-
-  const changeTheme = () => {
-    themeCtx.changeThemeHandler();
-  };
+  const currentTheme = themeCtx.darkTheme ? 'dark' : 'light';
 
   return (
-    <nav className="navbar">
+    <nav className={`navbar--${currentTheme}`}>
       <h1 className="navbar__logo">Where in the world?</h1>
-      <div onClick={changeTheme} className="navbar__theme-changer">
+      <div
+        onClick={themeCtx.changeThemeHandler}
+        className="navbar__theme-changer"
+      >
         <img
-          className="theme-changer__icon"
+          className={`theme-changer__icon--${currentTheme}`}
           src={themeCtx.darkTheme ? lightThemeIcon : darkThemeIcon}
           alt="Theme Icon"
         />
