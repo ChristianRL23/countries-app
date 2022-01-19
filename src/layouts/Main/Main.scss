@@ -15,4 +15,10 @@
     @extend .main;
     background-color: var(--light-background);
   }
+
+  &__countries-cards {
+    display: grid;
+    grid-template-rows: repeat(2, 20rem);
+    grid-template-columns: repeat(4, 1fr);
+  }
 }

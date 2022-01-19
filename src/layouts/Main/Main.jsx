@@ -1,24 +1,25 @@
 import { useContext, useEffect, useState } from 'react';
+import CountryCard from '../../components/CountryCard/CountryCard';
 import OptionsBar from '../../components/OptionsBar/OptionsBar';
 import ThemeContext from '../../context/themeContext';
 import './Main.scss';
 
 const Main = () => {
+  const [countries, setCountries] = useState([]);
+
   useEffect(() => {
     fetchCountriesData();
   }, []);
   const themeCtx = useContext(ThemeContext);
   const currentTheme = themeCtx.darkTheme ? 'dark' : 'light';
-  /* const [fetchingData, setFechingData] = useState(false); */
+
+  const countriesFetched = [];
 
   const fetchCountriesData = async () => {
-    /* setFechingData(true); */
     const response = await fetch('https://restcountries.com/v3.1/all');
     const data = await response.json();
-    /* setFechingData(false); */
 
     const countriesIndexesFetched = [];
-    const countriesFetched = [];
 
     const generateRandomNumber = (min, max) => {
       return Math.floor(Math.random() * (max - min + 1) + min);
@@ -50,12 +51,23 @@ const Main = () => {
       countriesFetched.push(data[index]);
     });
 
-    console.log(countriesFetched);
+    setCountries([...countriesFetched]);
   };
 
   return (
     <main className={`main--${currentTheme}`}>
       <OptionsBar />
+      <div className="main__countries-cards">
+        {countries.map((country) => (
+          <CountryCard
+            countryFlagImg={country.flags.png}
+            countryPopulation={country.population}
+            countryName={country.name.common}
+            countryRegion={country.region}
+            countryCapital={country.capital}
+          />
+        ))}
+      </div>
     </main>
   );
 };

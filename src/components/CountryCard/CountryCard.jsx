@@ -1,20 +1,26 @@
 import './CountryCard.scss';
 
-const CountryCard = () => {
+const CountryCard = ({
+  countryName,
+  countryFlagImg,
+  countryPopulation,
+  countryRegion,
+  countryCapital,
+}) => {
   return (
-    <div>
-      <img />
+    <div className="country-card">
+      <img src={countryFlagImg} alt="Country flag" />
       <div>
-        <h5>Country</h5>
+        <h5>{countryName}</h5>
         <div>
           <h6>
-            Population: <span>999999</span>
+            Population: <span>{countryPopulation}</span>
           </h6>
           <h6>
-            Region: <span>America</span>{' '}
+            Region: <span>{countryRegion}</span>
           </h6>
           <h6>
-            Capital: <span>Mexico City</span>{' '}
+            Capital: <span>{countryCapital}</span>
           </h6>
         </div>
       </div>
