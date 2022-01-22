@@ -2,6 +2,7 @@ import './Filter.scss';
 import arrowDownIcon from './chevron-down-outline.svg';
 import { useState, useContext } from 'react';
 import ThemeContext from '../../context/themeContext';
+import { Link } from 'react-router-dom';
 
 const Filter = () => {
   const [optionsDisplay, setOptionsDisplay] = useState(false);
@@ -29,11 +30,11 @@ const Filter = () => {
       </div>
       {optionsDisplay && (
         <div className={`filter__options--${currentTheme}`}>
-          <p>Africa</p>
-          <p>America</p>
-          <p>Asia</p>
-          <p>Europe</p>
-          <p>Oceania</p>
+          <Link to="/africa">Africa</Link>
+          <Link to="/america">America</Link>
+          <Link to="/asia">Asia</Link>
+          <Link to="/europe">Europe</Link>
+          <Link to="/oceania">Oceania</Link>
         </div>
       )}
     </div>
