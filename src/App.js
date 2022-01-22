@@ -1,10 +1,17 @@
 import Navbar from './components/Navbar/Navbar';
+import './App.scss';
+import OptionsBar from './components/OptionsBar/OptionsBar';
+import Countries from './layouts/Countries/Countries';
+import { useContext } from 'react';
+import ThemeContext from './context/themeContext';
 import Main from './layouts/Main/Main';
-import './App.css';
 
 function App() {
+  const themeCtx = useContext(ThemeContext);
+  const currentTheme = themeCtx.darkTheme ? 'dark' : 'light';
+
   return (
-    <div className="App">
+    <div className={`app--${currentTheme}`}>
       <Navbar />
       <Main />
     </div>

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800&display=swap');
+@import './shared';
 
 :root {
   --dark-element: hsl(209, 23%, 22%);
@@ -22,4 +23,16 @@ html {
 
 body {
   font-family: 'Nunito Sans', sans-serif;
+}
+
+.app {
+  @include changeThemeTransition(background-color);
+
+  &--dark {
+    background-color: var(--dark-background);
+  }
+
+  &--light {
+    background-color: var(--light-background);
+  }
 }
