@@ -5,23 +5,31 @@ import {
   generateNewNumberAndVerifyIt,
 } from '../../utils/randomNumbers';
 
-const All = ({ countries }) => {
+const Africa = ({ countries }) => {
+  const regionCountries = countries.filter(
+    (country) => country.region === 'Africa'
+  );
   const [countriesFetched, setCountriesFetched] = useState([]);
   const countriesIndexes = [];
   const countriesFetch = [];
   useEffect(() => {
     for (let i = 0; i < 8; i++) {
       if (countriesIndexes.length === 0) {
-        const firstRandomNumber = generateRandomNumber(0, countries.length - 1);
+        const firstRandomNumber = generateRandomNumber(
+          0,
+          regionCountries.length - 1
+        );
         countriesIndexes.push(firstRandomNumber);
       } else {
-        generateNewNumberAndVerifyIt(countriesIndexes, countries.length - 1);
+        generateNewNumberAndVerifyIt(
+          countriesIndexes,
+          regionCountries.length - 1
+        );
       }
     }
 
     countriesIndexes.forEach((index) => {
-      console.log('hello');
-      countriesFetch.push(countries[index]);
+      countriesFetch.push(regionCountries[index]);
     });
 
     setCountriesFetched(countriesFetch);
@@ -38,4 +46,4 @@ const All = ({ countries }) => {
   ));
 };
 
-export default All;
+export default Africa;

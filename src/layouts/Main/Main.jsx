@@ -1,6 +1,8 @@
 import { useContext, useEffect, useState } from 'react';
+import { Route, Routes } from 'react-router-dom';
 import OptionsBar from '../../components/OptionsBar/OptionsBar';
 import ThemeContext from '../../context/themeContext';
+import Africa from '../Africa/Africa';
 import All from '../All/All';
 import './Main.scss';
 
@@ -26,7 +28,10 @@ const Main = () => {
         {countries.length === 0 ? (
           <p>Loading...</p>
         ) : (
-          <All countries={countries} />
+          <Routes>
+            <Route path="/" element={<All countries={countries} />} />
+            <Route path="/africa" element={<Africa countries={countries} />} />
+          </Routes>
         )}
       </div>
     </main>
