@@ -19,7 +19,7 @@ const useFetch = () => {
 
   useEffect(() => {
     if (countries.length > 0) {
-      if (countriesFilterCtx.countriesFilter !== 'Filter by Region') {
+      if (countriesFilterCtx.countriesFilter !== 'All') {
         if (countriesFilterCtx.countriesFilter === 'America') {
           const regionCountries = countries.filter(
             (country) => country.region === 'Americas'

@@ -27,7 +27,9 @@ const Filter = () => {
         className={`filter__button--${currentTheme}`}
       >
         <p className={`filter__button__text--${currentTheme}`}>
-          {countriesFilterCtx.countriesFilter}
+          {countriesFilterCtx.countriesFilter === 'All'
+            ? 'Filter by Region'
+            : countriesFilterCtx.countriesFilter}
         </p>
         <img
           className={`filter__button__icon--${currentTheme}`}
@@ -37,7 +39,9 @@ const Filter = () => {
       </div>
       {optionsDisplay && (
         <div className={`filter__options--${currentTheme}`}>
-          <p onClick={changeFilter}>Filter by Region</p>
+          {countriesFilterCtx.countriesFilter !== 'All' && (
+            <p onClick={changeFilter}>All</p>
+          )}
           <p onClick={changeFilter}>Africa</p>
           <p onClick={changeFilter}>America</p>
           <p onClick={changeFilter}>Asia</p>
