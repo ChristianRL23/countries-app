@@ -1,10 +1,9 @@
 import Navbar from './components/Navbar/Navbar';
 import './App.scss';
-import OptionsBar from './components/OptionsBar/OptionsBar';
-import Countries from './layouts/Countries/Countries';
 import { useContext } from 'react';
 import ThemeContext from './context/themeContext';
 import Main from './layouts/Main/Main';
+import { CountriesContextProvider } from './context/countriesContext';
 
 function App() {
   const themeCtx = useContext(ThemeContext);
@@ -12,8 +11,10 @@ function App() {
 
   return (
     <div className={`app--${currentTheme}`}>
-      <Navbar />
-      <Main />
+      <CountriesContextProvider>
+        <Navbar />
+        <Main />
+      </CountriesContextProvider>
     </div>
   );
 }

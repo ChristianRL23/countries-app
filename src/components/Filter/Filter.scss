@@ -14,7 +14,6 @@
     gap: 1rem;
     cursor: pointer;
     border-radius: 5px;
-    @include changeThemeTransition(background-color);
 
     &--dark {
       @extend .filter__button;
@@ -28,7 +27,6 @@
 
     &__text {
       font-size: 1.5rem;
-      @include changeThemeTransition(color);
 
       &--dark {
         @extend .filter__button__text;
@@ -43,7 +41,6 @@
 
     &__icon {
       width: 2rem;
-      @include changeThemeTransition(filter);
 
       &--dark {
         @extend .filter__button__icon;
@@ -64,8 +61,6 @@
     padding: 1rem 2rem;
     font-size: 1.6rem;
     border-radius: 5px;
-    @include changeThemeTransition(background-color);
-    @include changeThemeTransition(color);
 
     &--dark {
       @extend .filter__options;
@@ -79,11 +74,12 @@
       color: var(--light-text);
     }
 
-    a:link,
-    a:visited {
+    p {
       cursor: pointer;
-      display: block;
-      text-decoration: none;
+
+      &:not(:last-child) {
+        margin-bottom: 1rem;
+      }
     }
   }
 }

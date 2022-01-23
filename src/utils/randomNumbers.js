@@ -7,12 +7,12 @@ export const generateNewNumberAndVerifyIt = (
   numberOfCountries
 ) => {
   const randomNumber = generateRandomNumber(0, numberOfCountries);
+  console.log(countriesIndexesArr);
   const repeatedRandomNumber = countriesIndexesArr.find(
     (number) => number === randomNumber
   );
   if (!repeatedRandomNumber) {
-    countriesIndexesArr.push(randomNumber);
-    return;
+    return randomNumber;
   } else {
     generateNewNumberAndVerifyIt();
   }

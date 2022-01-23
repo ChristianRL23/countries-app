@@ -3,7 +3,6 @@
 .country-card {
   border-radius: 5px;
   box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.5);
-  @include changeThemeTransition(background-color);
 
   &--dark {
     @extend .country-card;
@@ -28,7 +27,6 @@
   &__name {
     font-size: 1.7rem;
     margin-bottom: 1.5rem;
-    @include changeThemeTransition(color);
 
     &--dark {
       @extend .country-card__name;
@@ -47,7 +45,6 @@
 
   &__population {
     font-size: 1.45rem;
-    @include changeThemeTransition(color);
 
     &--dark {
       @extend .country-card__population;
@@ -61,7 +58,6 @@
 
     &-value {
       font-weight: 400;
-      @include changeThemeTransition(color);
 
       &--dark {
         @extend .country-card__population-value;
@@ -76,7 +72,6 @@
   }
   &__region {
     font-size: 1.45rem;
-    @include changeThemeTransition(color);
 
     &--dark {
       @extend .country-card__region;
@@ -90,7 +85,6 @@
 
     &-value {
       font-weight: 400;
-      @include changeThemeTransition(color);
 
       &--dark {
         @extend .country-card__region-value;
@@ -105,7 +99,6 @@
   }
   &__capital {
     font-size: 1.45rem;
-    @include changeThemeTransition(color);
 
     &--dark {
       @extend .country-card__capital;
@@ -119,7 +112,6 @@
 
     &-value {
       font-weight: 400;
-      @include changeThemeTransition(color);
 
       &--dark {
         @extend .country-card__capital-value;

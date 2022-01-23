@@ -13,7 +13,6 @@
     width: 30%;
     box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.5);
     border-radius: 5px;
-    @include changeThemeTransition(background-color);
 
     &--dark {
       @extend .options-bar__search;
@@ -30,7 +29,6 @@
 .search {
   &__icon {
     width: 2.5rem;
-    @include changeThemeTransition(filter);
 
     &--dark {
       @extend .search__icon;
@@ -48,7 +46,6 @@
     background-color: transparent;
     font-size: 1.5rem;
     width: 100%;
-    @include changeThemeTransition(color);
 
     &--dark {
       @extend .search__input;

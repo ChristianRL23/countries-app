@@ -2,15 +2,21 @@ import './Filter.scss';
 import arrowDownIcon from './chevron-down-outline.svg';
 import { useState, useContext } from 'react';
 import ThemeContext from '../../context/themeContext';
-import { Link } from 'react-router-dom';
+import CountriesContext from '../../context/countriesContext';
 
 const Filter = () => {
   const [optionsDisplay, setOptionsDisplay] = useState(false);
   const themeCtx = useContext(ThemeContext);
   const currentTheme = themeCtx.darkTheme ? 'dark' : 'light';
+  const countriesFilterCtx = useContext(CountriesContext);
 
   const toggleOptions = () => {
     setOptionsDisplay((lastState) => !lastState);
+  };
+
+  const changeFilter = (e) => {
+    let country = e.target.textContent;
+    countriesFilterCtx.setCountriesFilter(country);
   };
 
   return (
@@ -30,11 +36,12 @@ const Filter = () => {
       </div>
       {optionsDisplay && (
         <div className={`filter__options--${currentTheme}`}>
-          <Link to="/africa">Africa</Link>
-          <Link to="/america">America</Link>
-          <Link to="/asia">Asia</Link>
-          <Link to="/europe">Europe</Link>
-          <Link to="/oceania">Oceania</Link>
+          <p onClick={changeFilter}>Filter by Region</p>
+          <p onClick={changeFilter}>Africa</p>
+          <p onClick={changeFilter}>America</p>
+          <p onClick={changeFilter}>Asia</p>
+          <p onClick={changeFilter}>Europe</p>
+          <p onClick={changeFilter}>Oceania</p>
         </div>
       )}
     </div>
