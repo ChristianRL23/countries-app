@@ -17,6 +17,7 @@ const Filter = () => {
   const changeFilter = (e) => {
     let country = e.target.textContent;
     countriesFilterCtx.setCountriesFilter(country);
+    setOptionsDisplay(false);
   };
 
   return (
@@ -26,7 +27,7 @@ const Filter = () => {
         className={`filter__button--${currentTheme}`}
       >
         <p className={`filter__button__text--${currentTheme}`}>
-          Filter by Region
+          {countriesFilterCtx.countriesFilter}
         </p>
         <img
           className={`filter__button__icon--${currentTheme}`}

@@ -7,10 +7,12 @@
   position: relative;
 
   &__button {
+    width: 18rem;
     box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.5);
     padding: 1rem 2rem;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 1rem;
     cursor: pointer;
     border-radius: 5px;
@@ -57,7 +59,7 @@
   &__options {
     position: absolute;
     transform: translateY(55px);
-    width: 100%;
+    width: 18rem;
     padding: 1rem 2rem;
     font-size: 1.6rem;
     border-radius: 5px;
