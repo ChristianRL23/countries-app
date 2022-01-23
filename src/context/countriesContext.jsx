@@ -6,7 +6,7 @@ const CountriesContext = React.createContext({
 });
 
 export const CountriesContextProvider = ({ children }) => {
-  const [countriesFilter, setCountriesFilter] = useState('Filter by Region');
+  const [countriesFilter, setCountriesFilter] = useState('All');
 
   return (
     <CountriesContext.Provider value={{ countriesFilter, setCountriesFilter }}>
