@@ -3,11 +3,13 @@ import Button from '../../components/Button/Button';
 import ThemeContext from '../../context/themeContext';
 import './Country.scss';
 import ArrowIcon from './arrow-back.svg';
+import CountriesContext from '../../context/countriesContext';
 
 const Country = () => {
   const themeCtx = useContext(ThemeContext);
   const currentTheme = themeCtx.darkTheme ? 'dark' : 'light';
   const [country, setCountry] = useState([]);
+  const countryCtx = useContext(CountriesContext);
 
   useEffect(() => {
     const fetchCountriesData = async () => {
@@ -19,11 +21,19 @@ const Country = () => {
     fetchCountriesData();
   }, []);
 
+  const backButtonAction = () => {
+    countryCtx.setCountrySelected('');
+  };
+
   return (
     country.length > 0 && (
       <section className={`country--${currentTheme}`}>
         <div className="country__back-button">
-          <Button icon={ArrowIcon} textContent="Back" />
+          <Button
+            clickFn={backButtonAction}
+            icon={ArrowIcon}
+            textContent="Back"
+          />
         </div>
         <div className="country__details">
           <img

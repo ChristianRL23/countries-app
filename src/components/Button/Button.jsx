@@ -2,13 +2,13 @@ import { useContext } from 'react';
 import ThemeContext from '../../context/themeContext';
 import './Button.scss';
 
-const Button = ({ icon, textContent }) => {
+const Button = ({ icon, textContent, clickFn }) => {
   const themeCtx = useContext(ThemeContext);
   const currentTheme = themeCtx.darkTheme ? 'dark' : 'light';
 
   if (icon) {
     return (
-      <div className={`button--${currentTheme}`}>
+      <div onClick={clickFn} className={`button--${currentTheme}`}>
         <img
           className={`button__icon--${currentTheme}`}
           src={icon}
