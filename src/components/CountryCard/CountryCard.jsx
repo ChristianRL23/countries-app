@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import './CountryCard.scss';
 import ThemeContext from '../../context/themeContext';
+import CountriesContext from '../../context/countriesContext';
 
 const CountryCard = ({
   countryName,
@@ -11,9 +12,14 @@ const CountryCard = ({
 }) => {
   const themeCtx = useContext(ThemeContext);
   const currentTheme = themeCtx.darkTheme ? 'dark' : 'light';
+  const countriesCtx = useContext(CountriesContext);
+
+  const selectCountry = () => {
+    countriesCtx.setCountrySelected(countryName);
+  };
 
   return (
-    <div className={`country-card--${currentTheme}`}>
+    <div onClick={selectCountry} className={`country-card--${currentTheme}`}>
       <img
         className="country-card__flag"
         src={countryFlagImg}

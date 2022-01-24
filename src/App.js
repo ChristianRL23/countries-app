@@ -3,20 +3,18 @@ import './App.scss';
 import { useContext } from 'react';
 import ThemeContext from './context/themeContext';
 import Main from './layouts/Main/Main';
-import { CountriesContextProvider } from './context/countriesContext';
+import CountriesContext from './context/countriesContext';
 import Country from './layouts/Country/Country';
 
 function App() {
   const themeCtx = useContext(ThemeContext);
   const currentTheme = themeCtx.darkTheme ? 'dark' : 'light';
+  const countryCtx = useContext(CountriesContext);
 
   return (
     <div className={`app--${currentTheme}`}>
-      <CountriesContextProvider>
-        <Navbar />
-        <Country />
-        {/* <Main /> */}
-      </CountriesContextProvider>
+      <Navbar />
+      {countryCtx.countrySelected === '' ? <Main /> : <Country />}
     </div>
   );
 }

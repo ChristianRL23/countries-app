@@ -1,17 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
 import App from './App';
+import { CountriesContextProvider } from './context/countriesContext';
 import { ThemeContextProvider } from './context/themeContext';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <CountriesContextProvider>
       <ThemeContextProvider>
         <App />
       </ThemeContextProvider>
-    </BrowserRouter>
+    </CountriesContextProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
