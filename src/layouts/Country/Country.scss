@@ -1,0 +1,22 @@
+@import './../../_shared.scss';
+
+.country {
+  height: 90.3vh;
+
+  &--dark {
+    @extend .country;
+    background-color: var(--dark-background);
+  }
+
+  &--light {
+    @extend .country;
+    background-color: var(--light-background);
+  }
+
+  &__back-button {
+    @include containerPadding;
+    background-color: transparent;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+}

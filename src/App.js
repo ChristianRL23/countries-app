@@ -4,6 +4,7 @@ import { useContext } from 'react';
 import ThemeContext from './context/themeContext';
 import Main from './layouts/Main/Main';
 import { CountriesContextProvider } from './context/countriesContext';
+import Country from './layouts/Country/Country';
 
 function App() {
   const themeCtx = useContext(ThemeContext);
@@ -13,7 +14,8 @@ function App() {
     <div className={`app--${currentTheme}`}>
       <CountriesContextProvider>
         <Navbar />
-        <Main />
+        <Country />
+        {/* <Main /> */}
       </CountriesContextProvider>
     </div>
   );
