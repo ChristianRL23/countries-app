@@ -1,0 +1,48 @@
+.button {
+  display: flex;
+  padding: 1rem 2rem;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  width: 12rem;
+  border-radius: 5px;
+  box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+
+  &--dark {
+    @extend .button;
+    background-color: var(--dark-element);
+  }
+
+  &--light {
+    @extend .button;
+    background-color: var(--light-element);
+  }
+
+  &__icon {
+    width: 1.8rem;
+
+    &--dark {
+      @extend .button__icon;
+      filter: invert(100%);
+    }
+
+    &--light {
+      @extend .button__icon;
+    }
+  }
+
+  &__text {
+    font-size: 1.8rem;
+
+    &--dark {
+      @extend .button__text;
+      color: var(--dark-text);
+    }
+
+    &--light {
+      @extend .button__text;
+      color: var(--light-text);
+    }
+  }
+}
