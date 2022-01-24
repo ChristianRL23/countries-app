@@ -5,16 +5,22 @@ import ThemeContext from './context/themeContext';
 import Main from './layouts/Main/Main';
 import CountriesContext from './context/countriesContext';
 import Country from './layouts/Country/Country';
+import useFetch from './hooks/useFetch';
 
 function App() {
   const themeCtx = useContext(ThemeContext);
   const currentTheme = themeCtx.darkTheme ? 'dark' : 'light';
   const countryCtx = useContext(CountriesContext);
+  const [countries, countriesToDisplay] = useFetch();
 
   return (
     <div className={`app--${currentTheme}`}>
       <Navbar />
-      {countryCtx.countrySelected === '' ? <Main /> : <Country />}
+      {countryCtx.countrySelected === '' ? (
+        <Main countries={countries} countriesToDisplay={countriesToDisplay} />
+      ) : (
+        <Country />
+      )}
     </div>
   );
 }

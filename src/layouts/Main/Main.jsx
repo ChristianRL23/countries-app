@@ -3,10 +3,8 @@ import OptionsBar from '../../components/OptionsBar/OptionsBar';
 import ThemeContext from '../../context/themeContext';
 import CountryCard from '../../components/CountryCard/CountryCard';
 import './Main.scss';
-import useFetch from './../../hooks/useFetch';
 
-const Main = () => {
-  const [countries, countriesToDisplay] = useFetch();
+const Main = ({ countries, countriesToDisplay }) => {
   const themeCtx = useContext(ThemeContext);
   const currentTheme = themeCtx.darkTheme ? 'dark' : 'light';
 
