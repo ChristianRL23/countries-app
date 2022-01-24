@@ -9,6 +9,21 @@
   box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.5);
   cursor: pointer;
 
+  &--text {
+    @extend .button;
+    width: auto;
+
+    &--dark {
+      @extend .button--text;
+      color: var(--dark-text);
+    }
+
+    &--light {
+      @extend .button--text;
+      color: var(--light-text);
+    }
+  }
+
   &--dark {
     @extend .button;
     background-color: var(--dark-element);
@@ -33,7 +48,7 @@
   }
 
   &__text {
-    font-size: 1.8rem;
+    font-size: 1.7rem;
 
     &--dark {
       @extend .button__text;

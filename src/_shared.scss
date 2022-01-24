@@ -1,3 +1,31 @@
 @mixin containerPadding {
   padding: 0 6rem;
 }
+
+@mixin descriptionName($mainClass) {
+  font-size: 1.7rem;
+
+  &--dark {
+    @extend .#{$mainClass};
+    color: var(--dark-text);
+  }
+
+  &--light {
+    @extend .#{$mainClass};
+    color: var(--light-text);
+  }
+}
+
+@mixin descriptionValue($mainClass) {
+  font-weight: 300;
+
+  &--dark {
+    @extend .#{$mainClass};
+    color: var(--dark-text);
+  }
+
+  &--light {
+    @extend .#{$mainClass};
+    color: var(--light-text);
+  }
+}
