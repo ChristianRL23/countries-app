@@ -5,20 +5,17 @@ import './Country.scss';
 import ArrowIcon from './arrow-back.svg';
 import CountriesContext from '../../context/countriesContext';
 
-const Country = () => {
+const Country = ({ allCountries }) => {
   const themeCtx = useContext(ThemeContext);
   const currentTheme = themeCtx.darkTheme ? 'dark' : 'light';
-  const [country, setCountry] = useState([]);
   const countryCtx = useContext(CountriesContext);
+  const [country, setCountry] = useState('');
 
   useEffect(() => {
-    const fetchCountriesData = async () => {
-      const response = await fetch('https://restcountries.com/v2/name/mexico');
-      const data = await response.json();
-      setCountry(data);
-    };
-
-    fetchCountriesData();
+    const countrySelected = allCountries.find(
+      (country) => country.name === countryCtx.countrySelected
+    );
+    setCountry(countrySelected);
   }, []);
 
   const backButtonAction = () => {
@@ -26,7 +23,7 @@ const Country = () => {
   };
 
   return (
-    country.length > 0 && (
+    country !== '' && (
       <section className={`country--${currentTheme}`}>
         <div className="country__back-button">
           <Button
@@ -38,55 +35,57 @@ const Country = () => {
         <div className="country__details">
           <img
             className="country__details__flag"
-            src={country[0].flags.svg}
+            src={country.flags.svg}
             alt="Country flag"
           />
           <div className="country__details__info">
             <h2 className={`country__details__info__name--${currentTheme}`}>
-              {country[0].name}
+              {country.name}
             </h2>
             <div className="country__details__info__data">
               <div className="details--left">
                 <h6 className={`detail__name--${currentTheme}`}>
                   Native Name:{' '}
-                  <span className="detail__value">{country[0].nativeName}</span>
+                  <span className="detail__value">{country.nativeName}</span>
                 </h6>
                 <h6 className={`detail__name--${currentTheme}`}>
                   Population:{' '}
-                  <span className="detail__value">{country[0].population}</span>
+                  <span className="detail__value">{country.population}</span>
                 </h6>
                 <h6 className={`detail__name--${currentTheme}`}>
                   Region:{' '}
-                  <span className="detail__value">{country[0].region}</span>
+                  <span className="detail__value">{country.region}</span>
                 </h6>
                 <h6 className={`detail__name--${currentTheme}`}>
                   Sub Region:{' '}
-                  <span className="detail__value">{country[0].subregion}</span>
+                  <span className="detail__value">{country.subregion}</span>
                 </h6>
                 <h6 className={`detail__name--${currentTheme}`}>
                   Capital:{' '}
-                  <span className="detail__value">{country[0].capital}</span>
+                  <span className="detail__value">{country.capital}</span>
                 </h6>
               </div>
               <div className="details--right">
                 <h6 className={`detail__name--${currentTheme}`}>
                   Top Level Domain:{' '}
-                  <span className="detail__value">{country[0].region}</span>
+                  <span className="detail__value">
+                    {country.topLevelDomain[0]}
+                  </span>
                 </h6>
                 <h6 className={`detail__name--${currentTheme}`}>
                   Demonym:{' '}
-                  <span className="detail__value">{country[0].demonym}</span>
+                  <span className="detail__value">{country.demonym}</span>
                 </h6>
                 <h6 className={`detail__name--${currentTheme}`}>
                   Currencies:{' '}
                   <span className="detail__value">
-                    {country[0].currencies[0].name}
+                    {country.currencies[0].name}
                   </span>
                 </h6>
                 <h6 className={`detail__name--${currentTheme}`}>
                   Languages:{' '}
                   <span className="detail__value">
-                    {country[0].languages[0].name}
+                    {country.languages[0].name}
                   </span>
                 </h6>
               </div>

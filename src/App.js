@@ -19,7 +19,7 @@ function App() {
       {countryCtx.countrySelected === '' ? (
         <Main countries={countries} countriesToDisplay={countriesToDisplay} />
       ) : (
-        <Country />
+        <Country allCountries={countries} />
       )}
     </div>
   );

@@ -19,7 +19,7 @@ const Main = ({ countries, countriesToDisplay }) => {
             <CountryCard
               countryFlagImg={country.flags.png}
               countryPopulation={country.population}
-              countryName={country.name.common}
+              countryName={country.name}
               countryRegion={country.region}
               countryCapital={country.capital}
             />
