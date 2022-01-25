@@ -49,6 +49,7 @@
 
     &--dark {
       @extend .search__input;
+      color: var(--dark-text);
       &::placeholder {
         color: var(--dark-text);
       }
@@ -56,6 +57,7 @@
 
     &--light {
       @extend .search__input;
+      color: var(--light-text);
       &::placeholder {
         color: var(--light-text);
       }
