@@ -78,15 +78,25 @@ const Country = ({ allCountries }) => {
                 </h6>
                 <h6 className={`detail__name--${currentTheme}`}>
                   Currencies:{' '}
-                  <span className="detail__value">
+                  {country.currencies.map((currency) => {
+                    return (
+                      <span className="detail__value">{currency.name} </span>
+                    );
+                  })}
+                  {/* <span className="detail__value">
                     {country.currencies[0].name}
-                  </span>
+                  </span> */}
                 </h6>
                 <h6 className={`detail__name--${currentTheme}`}>
                   Languages:{' '}
-                  <span className="detail__value">
+                  {country.languages.map((language) => {
+                    return (
+                      <span className="detail__value">{language.name} </span>
+                    );
+                  })}
+                  {/* <span className="detail__value">
                     {country.languages[0].name}
-                  </span>
+                  </span> */}
                 </h6>
               </div>
             </div>
