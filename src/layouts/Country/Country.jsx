@@ -60,10 +60,12 @@ const Country = ({ allCountries }) => {
                   Sub Region:{' '}
                   <span className="detail__value">{country.subregion}</span>
                 </h6>
-                <h6 className={`detail__name--${currentTheme}`}>
-                  Capital:{' '}
-                  <span className="detail__value">{country.capital}</span>
-                </h6>
+                {country.capital && (
+                  <h6 className={`detail__name--${currentTheme}`}>
+                    Capital:{' '}
+                    <span className="detail__value">{country.capital}</span>
+                  </h6>
+                )}
               </div>
               <div className="details--right">
                 <h6 className={`detail__name--${currentTheme}`}>
@@ -76,17 +78,15 @@ const Country = ({ allCountries }) => {
                   Demonym:{' '}
                   <span className="detail__value">{country.demonym}</span>
                 </h6>
-                <h6 className={`detail__name--${currentTheme}`}>
-                  Currencies:{' '}
-                  {country.currencies.map((currency) => {
-                    return (
-                      <span className="detail__value">{currency.name} </span>
-                    );
-                  })}
-                  {/* <span className="detail__value">
-                    {country.currencies[0].name}
-                  </span> */}
-                </h6>
+                {country.currencies && (
+                  <h6 className={`detail__name--${currentTheme}`}>
+                    Currencies:{' '}
+                    {country.currencies &&
+                      country.currencies.map((currency) => (
+                        <span className="detail__value">{currency.name} </span>
+                      ))}
+                  </h6>
+                )}
                 <h6 className={`detail__name--${currentTheme}`}>
                   Languages:{' '}
                   {country.languages.map((language) => {
@@ -94,20 +94,19 @@ const Country = ({ allCountries }) => {
                       <span className="detail__value">{language.name} </span>
                     );
                   })}
-                  {/* <span className="detail__value">
-                    {country.languages[0].name}
-                  </span> */}
                 </h6>
               </div>
             </div>
-            <div className="country__details__info__neighbors">
-              <h6 className={`detail__name--${currentTheme}`}>
-                Border Countries:
-              </h6>
-              <Button textContent="Mexico" />
-              <Button textContent="Mexico" />
-              <Button textContent="Mexico" />
-            </div>
+            {country.borders && (
+              <div className="country__details__info__neighbors">
+                <h6 className={`detail__name--${currentTheme}`}>
+                  Border Countries:
+                </h6>
+                {country.borders.map((border) => (
+                  <Button textContent={border} />
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </section>
