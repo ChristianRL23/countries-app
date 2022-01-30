@@ -19,7 +19,7 @@ const Button = ({ icon, textContent, clickFn }) => {
     );
   } else {
     return (
-      <div className={`button--text--${currentTheme}`}>
+      <div onClick={clickFn} className={`button--text--${currentTheme}`}>
         <p className={`button__text--${currentTheme}`}>{textContent}</p>
       </div>
     );

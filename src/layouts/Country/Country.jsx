@@ -10,16 +10,25 @@ const Country = ({ allCountries }) => {
   const currentTheme = themeCtx.darkTheme ? 'dark' : 'light';
   const countryCtx = useContext(CountriesContext);
   const [country, setCountry] = useState('');
+  const { countrySelected } = countryCtx;
 
   useEffect(() => {
     const countrySelected = allCountries.find(
       (country) => country.name === countryCtx.countrySelected
     );
     setCountry(countrySelected);
-  }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [countrySelected]);
 
   const backButtonAction = () => {
     countryCtx.setCountrySelected('');
+  };
+
+  const selectBorderCountry = (e) => {
+    const borderCountrySelected = allCountries.find(
+      (country) => country.alpha3Code === e.target.textContent
+    );
+    countryCtx.setCountrySelected(borderCountrySelected.name);
   };
 
   return (
@@ -103,7 +112,7 @@ const Country = ({ allCountries }) => {
                   Border Countries:
                 </h6>
                 {country.borders.map((border) => (
-                  <Button textContent={border} />
+                  <Button clickFn={selectBorderCountry} textContent={border} />
                 ))}
               </div>
             )}
