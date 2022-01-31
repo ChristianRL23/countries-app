@@ -26,18 +26,22 @@ const OptionsBar = () => {
   const searchCountry = async (e) => {
     e.preventDefault();
     setError(null);
-    try {
-      const response = await fetch(
-        `https://restcountries.com/v2/name/${searchInput}`
-      );
-      const data = await response.json();
-      if (data.status === 404) {
-        throw new Error('Country not found!');
+    if (searchInput === '') {
+      setError(`Can't leave search field empty`);
+    } else {
+      try {
+        const response = await fetch(
+          `https://restcountries.com/v2/name/${searchInput}`
+        );
+        const data = await response.json();
+        if (data.status === 404) {
+          throw new Error('Country not found!');
+        }
+        countriesCtx.setCountrySelected(data[0].name);
+        setSearchInput('');
+      } catch (err) {
+        setError(err.message);
       }
-      countriesCtx.setCountrySelected(data[0].name);
-      setSearchInput('');
-    } catch (err) {
-      setError(err.message);
     }
   };
 
