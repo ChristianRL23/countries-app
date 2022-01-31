@@ -60,6 +60,7 @@
 
       &__neighbors {
         display: flex;
+        flex-wrap: wrap;
         align-items: center;
 
         h6 {
