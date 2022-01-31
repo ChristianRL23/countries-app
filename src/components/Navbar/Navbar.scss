@@ -56,3 +56,27 @@
     }
   }
 }
+
+@media screen and (max-width: 619px) {
+  .navbar {
+    padding: 0 2rem;
+
+    &__logo {
+      font-size: 1.8rem;
+    }
+
+    &__theme-changer {
+      width: auto;
+      gap: 1rem;
+    }
+  }
+
+  .theme-changer {
+    &__icon {
+      width: 1.5rem;
+    }
+    &__text {
+      font-size: 1.3rem !important;
+    }
+  }
+}
