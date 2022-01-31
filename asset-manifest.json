@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/countries-app/static/css/main.b83ef3fc.css",
+    "main.js": "/countries-app/static/js/main.ab307dd4.js",
+    "static/js/787.6da2840d.chunk.js": "/countries-app/static/js/787.6da2840d.chunk.js",
+    "index.html": "/countries-app/index.html",
+    "static/media/arrow-back.svg": "/countries-app/static/media/arrow-back.ffc070f65a5723d9aa27604b47ed5e0d.svg",
+    "static/media/sunny-outline.svg": "/countries-app/static/media/sunny-outline.b1932e9844d0fc719e00d1f22d5c7e57.svg",
+    "static/media/moon-outline.svg": "/countries-app/static/media/moon-outline.32fd665f3eb1c9372352ca005c399890.svg",
+    "static/media/search-outline.svg": "/countries-app/static/media/search-outline.4be0f579536375deb314ddb02b97de8a.svg",
+    "static/media/chevron-down-outline.svg": "/countries-app/static/media/chevron-down-outline.8261387b46a4e157bdf658369adba2ce.svg",
+    "main.b83ef3fc.css.map": "/countries-app/static/css/main.b83ef3fc.css.map",
+    "main.ab307dd4.js.map": "/countries-app/static/js/main.ab307dd4.js.map",
+    "787.6da2840d.chunk.js.map": "/countries-app/static/js/787.6da2840d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b83ef3fc.css",
+    "static/js/main.ab307dd4.js"
+  ]
+}
