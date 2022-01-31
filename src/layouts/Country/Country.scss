@@ -1,7 +1,7 @@
 @import './../../_shared.scss';
 
 .country {
-  height: 90.3vh;
+  height: 100%;
 
   &--dark {
     @extend .country;
@@ -24,15 +24,15 @@
     @include containerPadding;
     display: flex;
     gap: 10rem;
-    height: 40rem;
+    height: 100%;
 
     &__flag {
-      width: 60rem;
-      height: 90%;
+      width: 45%;
+      height: 100%;
     }
 
     &__info {
-      width: 100%;
+      width: 65%;
 
       &__name {
         font-size: 4rem;
@@ -81,5 +81,44 @@
   }
   &__value {
     @include descriptionValue(detail__name);
+  }
+}
+
+@media screen and (max-width: 1140px) {
+  .country {
+    &__back-button {
+      padding: 2.5rem 2.5rem;
+    }
+
+    &__details {
+      padding: 0 2.5rem;
+      gap: 5rem;
+      &__info {
+        &__data {
+          flex-direction: column;
+          height: auto;
+          gap: 0.6rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 590px) {
+  .country {
+    &__details {
+      flex-direction: column;
+      align-items: center;
+
+      &__flag {
+        width: 100%;
+      }
+      &__info {
+        width: 100%;
+        h2 {
+          font-size: 3rem;
+        }
+      }
+    }
   }
 }
