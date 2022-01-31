@@ -15,6 +15,22 @@
     background-color: var(--light-background);
   }
 
+  &__loading {
+    margin-top: 2.5rem;
+    font-size: 2rem;
+
+    &--dark {
+      @extend .main__loading;
+      color: var(--dark-text);
+    }
+
+    &--light {
+      @extend .main__loading;
+      background-color: var(--light-background);
+      color: var(--light-text);
+    }
+  }
+
   &__countries-cards {
     height: 100%;
     padding-top: 3rem;

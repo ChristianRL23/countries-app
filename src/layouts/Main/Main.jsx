@@ -13,7 +13,7 @@ const Main = ({ countries, countriesToDisplay }) => {
       <OptionsBar />
       <div className="main__countries-cards">
         {countries.length === 0 ? (
-          <p>Loading...</p>
+          <p className={`main__loading--${currentTheme}`}>Loading...</p>
         ) : (
           countriesToDisplay.map((country) => (
             <CountryCard
