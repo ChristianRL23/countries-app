@@ -92,7 +92,9 @@ const Country = ({ allCountries }) => {
                     Currencies:{' '}
                     {country.currencies &&
                       country.currencies.map((currency) => (
-                        <span className="detail__value">{currency.name} </span>
+                        <span key={currency.code} className="detail__value">
+                          {currency.name}{' '}
+                        </span>
                       ))}
                   </h6>
                 )}
@@ -100,7 +102,9 @@ const Country = ({ allCountries }) => {
                   Languages:{' '}
                   {country.languages.map((language) => {
                     return (
-                      <span className="detail__value">{language.name} </span>
+                      <span key={language.iso639_2} className="detail__value">
+                        {language.name}{' '}
+                      </span>
                     );
                   })}
                 </h6>
@@ -112,7 +116,11 @@ const Country = ({ allCountries }) => {
                   Border Countries:
                 </h6>
                 {country.borders.map((border) => (
-                  <Button clickFn={selectBorderCountry} textContent={border} />
+                  <Button
+                    key={border}
+                    clickFn={selectBorderCountry}
+                    textContent={border}
+                  />
                 ))}
               </div>
             )}

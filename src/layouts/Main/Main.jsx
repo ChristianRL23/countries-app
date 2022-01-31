@@ -17,6 +17,7 @@ const Main = ({ countries, countriesToDisplay }) => {
         ) : (
           countriesToDisplay.map((country) => (
             <CountryCard
+              key={country.alpha3Code}
               countryFlagImg={country.flags.png}
               countryPopulation={country.population}
               countryName={country.name}

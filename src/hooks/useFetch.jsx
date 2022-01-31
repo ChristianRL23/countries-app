@@ -10,9 +10,15 @@ const useFetch = () => {
 
   useEffect(() => {
     const fetchCountriesData = async () => {
-      const response = await fetch('https://restcountries.com/v2/all');
-      const data = await response.json();
-      setCountries(data);
+      try {
+        const response = await fetch('https://restcountries.com/v2/all');
+        if (response.ok === false)
+          throw new Error('Something went wrong! Please reload the page.');
+        const data = await response.json();
+        setCountries(data);
+      } catch (error) {
+        alert(error.message);
+      }
     };
 
     fetchCountriesData();
