@@ -57,7 +57,7 @@
   }
 }
 
-@media screen and (max-width: 619px) {
+@media screen and (max-width: 589px) {
   .navbar {
     padding: 0 2rem;
     &__logo {
@@ -77,5 +77,12 @@
     &__text {
       font-size: 1.3rem !important;
     }
+  }
+}
+
+@media screen and (max-width: 337px) {
+  .navbar {
+    flex-direction: column;
+    padding-top: 1.5rem;
   }
 }
