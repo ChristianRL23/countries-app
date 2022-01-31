@@ -101,3 +101,9 @@
     }
   }
 }
+
+@media screen and(max-width: 619px) {
+  .options-bar__search {
+    width: 100%;
+  }
+}
