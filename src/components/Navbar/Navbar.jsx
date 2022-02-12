@@ -10,7 +10,7 @@ const Navbar = () => {
 
   return (
     <nav className={`navbar--${currentTheme}`}>
-      <h1 className="navbar__logo">Where in the world?</h1>
+      <h1 className="navbar__logo">Countries App</h1>
       <div
         onClick={themeCtx.changeThemeHandler}
         className="navbar__theme-changer"

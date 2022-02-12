@@ -16,6 +16,7 @@
     &--dark {
       @extend .button--text;
       color: var(--dark-text);
+      background-color: var(--dark-element);
     }
 
     &--light {
