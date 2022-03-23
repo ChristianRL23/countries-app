@@ -68,6 +68,7 @@ Countries App is an application that consumes an API (<a href="https://restcount
   <li>Show an individual component with extra information for every country.</li>
   <li>Use the search bar to consult information about a specific country.</li>
   <li>Navigate between neighbours countries.</li>
+  <li>Responsive design.</li>
 </ul>
 
 
