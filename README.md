@@ -1,72 +1,99 @@
-# Getting Started with Create React App
+<h1 align="center">Countries App</h1>
 
-https://christianrl23.github.io/countries-app/
+<p align="center">
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" >
 
-## Available Scripts
+<img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white">
 
-In the project directory, you can run:
+<img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E">
 
-### `npm start`
+<img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" >
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<img src="https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white">
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<img src="https://img.shields.io/badge/json-5E5C5C?style=for-the-badge&logo=json&logoColor=white">
 
-### `npm test`
+</p>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+*<p align="center">An application where you can get information about more than 200 countries.</p>*
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<p float="left">
+  <img src="/images/home.jpg" width="500" >
+  <img src="/images/country.jpg" width="500" >
+</p>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<h2>Table of contents</h2>
+<ul>
+  <li> <a href="#demo">Demo</a></li>
+  <li> <a href="#general-info">General info</a></li>
+  <li> <a href="#technologies-used">Technologies used</a></li>
+  <li> <a href="#features">Features</a></li>
+  <li> <a href="#installation">Installation</a></li>
+</ul>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<h3 id="demo">Demo</h3>
+The app is ready to be used: https://christianrl23.github.io/countries-app/
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+<h3 id="general-info">General info</h3>
+Countries App is an application that consumes an API (<a href="https://restcountries.com/">REST Countries</a>) to provide the user with information about more than 200 countries, such as name, population, languages, currencies, etc.
 
-## Learn More
+<h3 id="technologies-used">Technologies used</h3>
+<ul>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML</a></li>  
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a></li>  
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JavaScript</a></li>  
+  <li><a href="https://reactjs.org/">React</a></li>
+    <ul>
+      <li>Hooks</li>
+      <li>Custom Hooks</li>
+      <li>Context API</li>
+    </ul>
+  <li><a href="https://sass-lang.com/">SASS / SCSS</a></li>
+  <li><a href="https://git-scm.com/">Git</a></li>
+  <li><a href="https://restcountries.com/">REST Countries API</a></li>  
+</ul>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<h3 id="features">Features</h3>
+<ul>
+  <li>Change app theme between light and dark mode.</li>
+  <li>Filter countries for region.</li>
+  <li>Show an individual component with extra information for every country.</li>
+  <li>Use the search bar to consult information about a specific country.</li>
+  <li>Navigate between neighbours countries.</li>
+</ul>
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+<h3 id="installation">Installation</h3>
 
-### Analyzing the Bundle Size
+1. Clone this repository
+   ```sh
+    git clone https://github.com/ChristianRL23/countries-app.git
+   ```
+2. Go into the repository
+   ```sh
+   cd countries-app
+   ```
+3. Install dependencies
+   ```sh
+   npm install
+   ```
+4. Run the app
+   ```sh
+   npm start
+   ```
+---
+<p align="center">
+  <a href="https://restcountries.com/">Portfolio</a> &nbsp;&middot;&nbsp;
+  <a href="https://restcountries.com/">LinkedIn</a> &nbsp;&middot;&nbsp;
+  <a href="https://restcountries.com/">Email</a> &nbsp;&middot;&nbsp;
+  <a href="https://restcountries.com/">GitHub</a>   
+</p>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
