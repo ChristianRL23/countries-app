@@ -21,8 +21,8 @@
 ---
 
 <p float="left">
-  <img src="/images/home.jpg" width="500" >
-  <img src="/images/country.jpg" width="500" >
+  <img src="/images/home.jpg" width="700" >
+  <img src="/images/country.jpg" width="700" >
 </p>
 
 
